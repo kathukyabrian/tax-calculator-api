@@ -1,0 +1,12 @@
+version: "2"
+services:
+  tax-api:
+    image: kitunda/tax-calculator:1.0.0
+    volumes:
+      - ./db/:/apps/db/
+    ports:
+      - 11417:8080
+    environment:
+      - JVM_OPTS=-Xmx128m -Xms128m
+      - "TZ=Africa/Nairobi"
+    restart: on-failure
